@@ -1,0 +1,9 @@
+FROM nginx:alpine
+
+RUN apk --no-cache add curl
+
+WORKDIR /
+
+ADD test_scripts/smoketests.sh /
+
+CMD ["sh", "smoketests.sh"]
