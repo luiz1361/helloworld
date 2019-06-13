@@ -1,9 +1,16 @@
-resource "aws_security_group" "instance" {
-  name = "terraform-example-instance"
-
+resource "aws_security_group" "asg" {
+  name = "asg_sg"
+  vpc_id      = "${aws_vpc.terra_vpc.id}"
   ingress {
-    from_port = "${var.server_port}"
-    to_port = "${var.server_port}"
+    from_port = "${var.app_port}"
+    to_port = "${var.app_port}"
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+   ingress {
+    from_port = "${var.busybox_port}"
+    to_port = "${var.busybox_port}"
     protocol = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
@@ -27,7 +34,8 @@ resource "aws_security_group" "instance" {
 }
 
 resource "aws_security_group" "elb" {
-  name = "terraform-example-elb"
+  name = "elb-sg"
+  vpc_id      = "${aws_vpc.terra_vpc.id}"
   egress {
     from_port = 0
     to_port = 0
@@ -41,3 +49,22 @@ resource "aws_security_group" "elb" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_security_group" "efs-sg" {
+   name = "efs-sg"
+   vpc_id      = "${aws_vpc.terra_vpc.id}"
+
+   ingress {
+     cidr_blocks = ["0.0.0.0/0"]
+     from_port = 2049
+     to_port = 2049
+     protocol = "tcp"
+   }
+
+   egress {
+     cidr_blocks = ["0.0.0.0/0"]
+     from_port = 0
+     to_port = 0
+     protocol = "-1"
+   }
+ }

@@ -1,5 +1,5 @@
-resource "aws_s3_bucket" "apps_bucket" {
-    bucket = "aksjdajsd10dj91j0d101dj"
+resource "aws_s3_bucket" "app_bucket" {
+    bucket = "${var.bucketname}"
     acl = "private"
     versioning {
             enabled = true

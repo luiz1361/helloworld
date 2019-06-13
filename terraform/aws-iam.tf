@@ -1,6 +1,5 @@
-# Create an IAM role for the Web Servers.
-resource "aws_iam_role" "web_iam_role" {
-    name = "web_iam_role"
+resource "aws_iam_role" "app_iam_role" {
+    name = "app_iam_role"
     assume_role_policy = <<EOF
 {
   "Version": "2012-10-17",
@@ -18,14 +17,14 @@ resource "aws_iam_role" "web_iam_role" {
 EOF
 }
 
-resource "aws_iam_instance_profile" "web_instance_profile" {
-    name = "web_instance_profile"
-    role = "${aws_iam_role.web_iam_role.name}"
+resource "aws_iam_instance_profile" "app_instance_profile" {
+    name = "app_instance_profile"
+    role = "${aws_iam_role.app_iam_role.name}"
 }
 
-resource "aws_iam_role_policy" "web_iam_role_policy" {
-  name = "web_iam_role_policy"
-  role = "${aws_iam_role.web_iam_role.id}"
+resource "aws_iam_role_policy" "app_iam_role_policy" {
+  name = "app_iam_role_policy"
+  role = "${aws_iam_role.app_iam_role.id}"
   policy = <<EOF
 {
   "Version": "2012-10-17",
