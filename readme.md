@@ -8,7 +8,62 @@
 
 **Helloworld** was created as a personal playground for IaC, Automation, Cloud, Monitoring, Build Pipelines, etc...
 
-**There are no deadlines or clear defined goals for this project.**
+The main goal is to build a highly scalable Wordpress(LAMP) application based on the following CI/CD stack as much as code as possible.
+
+Restrictions & Observations: 
+* A key restrictions for this project is to be a zero or near zero cost under AWS free-tier limits and/or Azure 12-months trial
+* Be easy to get started, develop, deploy and maintain leveraging open source projects
+
+Future plans: 
+* Might add a second cloud provider as Azure for multi region hybrid cloud environment
+* Separate Staging / Production environments 
+
+Planned CI/CD stack:
+* IaC and Config Management:
+  * Terraform
+  * Ansible 
+* Infrastructure:
+  * AWS:
+    * EC2
+    * ELB
+    * ASG
+    * EFS
+    * IAM
+    * S3
+    * RDS
+    * SES
+    * Alexa
+    * Lambda
+    * DynamoDB
+    * API Gateway
+    * SQS
+    * Cloud Watch
+    * VPC
+  * Cloudflare:
+    * DNS
+    * CDN
+* Project/Code repository:
+  * Github
+* Docker image registry and automated tests:
+  * DockerHub
+* Code quality:
+  * Codacy
+* Container:
+  * Orquestration:
+    * Swarm Mode
+  * Management:
+    * Portainer
+  * Reverse proxy/load balancer:
+    * Traefik
+* Monitoring:
+  * Prometheus
+    * Alertmanager
+  * Netdata
+  * Grafana
+* IM:
+  * Slack
+* Application:
+  * Wordpress(LAMP)
 
 More cool things to add in the future as time allows.
 
@@ -22,7 +77,7 @@ More cool things to add in the future as time allows.
 * AWS-Nuke Binary(https://github.com/rebuy-de/aws-nuke/releases) installed.
 * Terraform Binary(https://www.terraform.io/downloads.html) installed.
 
-### Manual tasks(still out of codebase):
+### Manual tasks(still out of IaC):
 
 #### AWS:
 * Initial CloudWatch billing alert via SNS to avoid surprises =)
