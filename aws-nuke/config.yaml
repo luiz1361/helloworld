@@ -32,37 +32,32 @@ accounts:
       - "dopt-9c2622e7"
       CloudWatchAlarm:
       - "BillingAlarm"
-      EC2InternetGatewayAttachment:
-      - "igw-21cd035a -> vpc-665ec51c"
+#      EC2InternetGatewayAttachment:
+#      - "igw-21cd035a -> vpc-665ec51c"
       SNSTopic:
       - "TopicARN: arn:aws:sns:us-east-1:813203487890:NotifyMe"
       SNSSubscription:
       - "Owner: 813203487890 ARN: arn:aws:sns:us-east-1:813203487890:NotifyMe:0f897075-aff8-4360-905c-1d91f4634ce4"
-      EC2VPC:
-      - "vpc-665ec51c"
-      EC2RouteTable:
-      - "rtb-f126c08f"
-      EC2InternetGateway:
-      - "igw-21cd035a"
-      EC2Subnet:
-      - "subnet-d7afb09d"
-      - "subnet-fbb9f69c"
-      - "subnet-4da0a142"
-      - "subnet-7de4ae53"
-      - "subnet-9df1b9c1"
-      - "subnet-50fd6f6e"
+#      EC2VPC:
+#      - "vpc-665ec51c"
+#      EC2RouteTable:
+#      - "rtb-f126c08f"
+#      EC2InternetGateway:
+#      - "igw-21cd035a"
+#      EC2Subnet:
+#      - "subnet-d7afb09d"
+#      - "subnet-fbb9f69c"
+#      - "subnet-4da0a142"
+#      - "subnet-7de4ae53"
+#      - "subnet-9df1b9c1"
+#      - "subnet-50fd6f6e"
       IAMUser:
-      - "administrator"
       - "terraform"
       IAMGroup:
-      - "administrator"
       - "terraform"
       IAMGroupPolicyAttachment:
-      - "administrator -> AdministratorAccess"
       - "terraform -> AdministratorAccess"
       IAMUserGroupAttachment:
-      - "administrator -> administrator"
       - "terraform -> terraform"
       IAMUserAccessKey:
-      - "administrator -> AKIA32VVUPSJMR6QGADQ"
       - "terraform -> AKIA32VVUPSJBLA2EIG3"
